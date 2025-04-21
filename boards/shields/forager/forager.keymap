@@ -21,6 +21,15 @@
 
 / {
     behaviors {
+           skq: sticky_key_quick_release {
+          compatible = "zmk,behavior-sticky-key";
+          label = "STICKY_KEY_QUICK_RELEASE";
+          #binding-cells = <1>;
+          bindings = <&kp>;
+          release-after-ms = <1000>;
+          quick-release;
+        };
+
         ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -72,7 +81,7 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp Z      &kp X      &kp C      &kp V   &kp B               &kp N    &kp M     &kp COMMA  &kp DOT    &ht LGUI FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                          &lt EXT SPACE  &sk LSHFT  &mt LCTRL ENTER  &mo SYMBOLS
+                                          &lt EXT SPACE  &skq LSHFT  &mt LCTRL ENTER  &mo SYMBOLS
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
