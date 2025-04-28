@@ -11,7 +11,6 @@
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
         wakeup-source;
-
     };
 
     default_layout: default_layout {
